@@ -94,6 +94,7 @@ jobs:
 
       - name: Gen md5sums
         run: |
+          cd Amethyst-Android
           md5sum out/app-release.apk > out/app-release.md5
 
       - name: Build Debug .apk
@@ -112,26 +113,24 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-debug (recommended)
-          path: out/app-debug.*
+          path: Amethyst-Android/out/app-debug.*
 
       - name: Upload release APK
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: out/app-release.*
+          path: Amethyst-Android/out/app-release.*
 
 
       - name: Release APKs
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.run_id }}
-          name: "android-(${{ steps.date.outputs.date }})"
-          body: |
-            - Build date: ${{ steps.date.outputs.date }}
+          name: "android-${{ github.run_id }}"
           prerelease: true
           files: |
-            out/app-release.apk
-            out/app-release.md5
-            out/app-debug.apk
-            out/app-debug.md5
+            Amethyst-Android/out/app-release.apk
+            Amethyst-Android/out/app-release.md5
+            Amethyst-Android/out/app-debug.apk
+            Amethyst-Android/out/app-debug.md5
 
