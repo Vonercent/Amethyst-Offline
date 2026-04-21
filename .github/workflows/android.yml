@@ -69,10 +69,15 @@ jobs:
           cd Amethyst-Android
           ./scripts/languagelist_updater.sh
 
+      - name: Decode keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > ./Amethyst-Android/keystore.jks
+
       - name: Patch files
         run: |
           patch ./Amethyst-Android/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java MinecraftDownloader.patch
           patch ./Amethyst-Android/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java Tools.patch
+          patch ./Amethyst-Android/app_pojavlauncher/build.gradle app_pojavlauncher-BuildGradle.patch
 
       - name: Build Release .apk
         run: |
