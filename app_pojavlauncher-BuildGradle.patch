@@ -1,0 +1,29 @@
+diff --git a/app_pojavlauncher/aamc_upload.jks b/app_pojavlauncher/aamc_upload.jks
+deleted file mode 100644
+index f66fdc77b..000000000
+Binary files a/app_pojavlauncher/aamc_upload.jks and /dev/null differ
+diff --git a/app_pojavlauncher/build.gradle b/app_pojavlauncher/build.gradle
+index b4102922b..2e1290004 100644
+--- a/app_pojavlauncher/build.gradle
++++ b/app_pojavlauncher/build.gradle
+@@ -86,16 +86,10 @@ android {
+             keyPassword "android"
+         }
+         customRelease {
+-            storeFile file("aamc_upload.jks")
+-            storePassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
+-            keyAlias "android_github_release"
+-            keyPassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
+-        }
+-        googlePlayBuild {
+-            storeFile file("upload.jks")
+-            storePassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
+-            keyAlias "upload"
+-            keyPassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
++            storeFile file("keystore.jks")
++            storePassword System.getenv("STORE_PASSWORD")
++            keyAlias System.getenv("KEY_ALIAS")
++            keyPassword System.getenv("KEY_PASSWORD")
+         }
+     }
+ 
