@@ -71,13 +71,14 @@ jobs:
 
       - name: Decode keystore
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > ./Amethyst-Android/keystore.jks
+          printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > keystore.jks
+          printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > ./Amethyst-Android/keystore.jks
 
       - name: Patch files
         run: |
           patch ./Amethyst-Android/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/tasks/MinecraftDownloader.java MinecraftDownloader.patch
           patch ./Amethyst-Android/app_pojavlauncher/src/main/java/net/kdt/pojavlaunch/Tools.java Tools.patch
-          patch ./Amethyst-Android/app_pojavlauncher/build.gradle app_pojavlauncher-BuildGradle.patch
+          patch ./Amethyst-Android/app_pojavlauncher/build.gradle app_pojavlauncher-gradle.patch
 
       - name: Build Release .apk
         run: |
@@ -119,7 +120,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.run_id }}
-          name: "Build (${{ steps.date.outputs.date }})"
+          name: "android-(${{ steps.date.outputs.date }})"
           body: |
             - Build date: ${{ steps.date.outputs.date }}
           prerelease: true
