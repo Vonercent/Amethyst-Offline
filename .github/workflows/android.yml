@@ -71,6 +71,7 @@ jobs:
         run: |
           cd Amethyst-Android
           ./scripts/languagelist_updater.sh
+          mkdir -p out
 
       - name: Decode keystore
         run: |
