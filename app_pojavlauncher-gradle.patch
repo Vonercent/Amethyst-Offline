@@ -1,6 +1,6 @@
 --- /Amethyst-Android/app_pojavlauncher/build.gradle
 +++ /Amethyst-Android/app_pojavlauncher/build.gradle
-@@ -86,16 +86,10 @@ android {
+@@ -86,10 +86,10 @@ android {
              keyPassword "android"
          }
          customRelease {
@@ -8,16 +8,11 @@
 -            storePassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
 -            keyAlias "android_github_release"
 -            keyPassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
--        }
--        googlePlayBuild {
--            storeFile file("upload.jks")
--            storePassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
--            keyAlias "upload"
--            keyPassword System.getenv("GPLAY_KEYSTORE_PASSWORD")
 +            storeFile file("keystore.jks")
 +            storePassword System.getenv("STORE_PASSWORD")
 +            keyAlias System.getenv("KEY_ALIAS")
 +            keyPassword System.getenv("KEY_PASSWORD")
          }
-     }
+         googlePlayBuild {
+             storeFile file("upload.jks")
  
