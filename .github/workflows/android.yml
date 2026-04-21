@@ -73,6 +73,7 @@ jobs:
         run: |
           printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > keystore.jks
           printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > ./Amethyst-Android/keystore.jks
+          printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > ./Amethyst-Android/app_pojavlauncher/keystore.jks
 
       - name: Patch files
         run: |
