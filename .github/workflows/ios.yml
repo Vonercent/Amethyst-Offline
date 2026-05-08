@@ -1,6 +1,6 @@
 name: iOS CI
 
-#on: [push, workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
@@ -133,3 +133,16 @@ jobs:
         with:
           name: AngelAuraAmethyst.dSYM
           path: Amethyst-iOS/artifacts/AngelAuraAmethyst.dSYM
+
+      - name: Release Files
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.run_id }}
+          name: "ios-${{ github.run_id }}"
+          prerelease: true
+          files: |
+            Amethyst-iOS/artifacts/org.angelauramc.amethyst-*-${{ matrix.platform_name }}.ipa
+            Amethyst-iOS/artifacts/org.angelauramc.amethyst-*-${{ matrix.platform_name }}-trollstore.tipa
+            Amethyst-iOS/artifacts/org.angelauramc.amethyst.slimmed-*-${{ matrix.platform_name }}.ipa
+            Amethyst-iOS/artifacts/org.angelauramc.amethyst.slimmed-*-${{ matrix.platform_name }}-trollstore.tipa
+            Amethyst-iOS/artifacts/AngelAuraAmethyst.dSYM

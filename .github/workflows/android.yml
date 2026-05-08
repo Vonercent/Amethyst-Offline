@@ -130,7 +130,7 @@ jobs:
         with:
           tag_name: ${{ github.run_id }}
           name: "android-${{ github.run_id }}"
-          prerelease: true
+          prerelease: false
           files: |
             Amethyst-Android/out/app-release.apk
             Amethyst-Android/out/app-release.md5

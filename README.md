@@ -10,7 +10,7 @@ You can get Amethyst via two methods:
 
 ## Building
 
-Clone the repository: `git clone --recursive https://github.com/DumDum192/Amethyst-Offline.git`
+Clone the repository: `git clone --recursive https://github.com/Vonercent/Amethyst-Offline.git`
 
 ### Android
 Patch and build the launcher: `./android-build` (Use `android-build.bat` on Windows).
@@ -22,4 +22,5 @@ You'll have to use [gpatch](https://formulae.brew.sh/formula/gpatch) to patch th
 See the [workflow file](https://github.com/DumDum192/Amethyst-Offline/blob/main/.github/workflows/ios.yml#L75) for further details.
 
 ## License & Credits
+[Original Repo](https://github.com/DumDum192/Amethyst-Offline)
 [Amethyst-Android](https://github.com/AngelAuraMC/Amethyst-Android/tree/v3_openjdk?tab=readme-ov-file#license) & [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS/tree/main?tab=readme-ov-file#contributors)
