@@ -23,5 +23,5 @@ You'll have to use [gpatch](https://formulae.brew.sh/formula/gpatch) to patch th
 See the [workflow file](https://github.com/Vonercent/Amethyst-Offline/blob/main/.github/workflows/ios.yml#L75) for further details.
 
 ## License & Credits
-[Amethyst-Offline (DumDum192)](https://github.com/DumDum192/Amethyst-Offline)
-[Amethyst-Android](https://github.com/AngelAuraMC/Amethyst-Android/tree/v3_openjdk?tab=readme-ov-file#license) & [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS/tree/main?tab=readme-ov-file#contributors)
+[Amethyst-Offline (DumDum192)](https://github.com/DumDum192/Amethyst-Offline) |
+[Amethyst-Android](https://github.com/AngelAuraMC/Amethyst-Android/tree/v3_openjdk?tab=readme-ov-file#license) | [Amethyst-iOS](https://github.com/AngelAuraMC/Amethyst-iOS/tree/main?tab=readme-ov-file#contributors)
